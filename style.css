@@ -1,0 +1,25 @@
+body {
+    color: blue;
+    background: #ECF0F1;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+#first {
+    background-color: #ff0;              /* Только желтый фон */
+    background-image: url(img/test.jpg);  /* Картинка поверх фона */
+    background-position: top;             /* Одно значение - сверху */
+    background-repeat: no-repeat;          /* Одно значение - повтор по горизонтали */
+}
+
+p {
+    height: 200px;
+    width: 300px;
+}
