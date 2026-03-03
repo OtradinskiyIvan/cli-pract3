@@ -1,11 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <!-- 1. Подключение стилей -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Для всех заголовков первого уровня цвет текста будет синим</h1>
-    
-    <p id="first">Цвет фона данного параграфа будет серым</p>
-    
-    <h1 class="border">Заголовок с рамкой</h1>
-    <p class="border">Параграф с рамкой</p>
+
+    <!-- 3. Меню сайта (одинаковое на всех страницах) -->
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <!-- Якорная ссылка на страницу products -->
+            <li><a href="info.html#about-us">О нас</a></li>
+            <li><a href="info.html#services">Услуги</a></li>
+            <li><a href="products.html">Товары</a></li>
+            <li><a href="info.html#contacts">Контакты</a></li>
+            <li><a href="info.html#faq">FAQ</a></li>
+            <li><a href="#top" id="top-link">Наверх ↑</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Главная информация</h1>
+
+        <div class="main-info">
+            <h2>О нашем магазине</h2>
+            <p>Добро пожаловать в наш интернет-магазин! Мы предлагаем широкий ассортимент высококачественных товаров для всей семьи.</p>
+            <p>Наши преимущества:</p>
+            <ul>
+                <li>Только оригинальная продукция</li>
+                <li>Быстрая доставка по всей стране</li>
+                <li>Гарантия качества</li>
+            </ul>
+            <p>Чтобы посмотреть наши товары, перейдите в раздел <a href="product.html">Товары</a>.</p>
+        </div>
+    </div>
+
 </body>
+</html>
