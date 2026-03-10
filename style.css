@@ -93,3 +93,7 @@ body {
     background-position: left center;
     padding-left: 25px;
 }
+
+.product:target{
+display:block;
+}
