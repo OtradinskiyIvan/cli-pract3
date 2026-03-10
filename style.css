@@ -1,135 +1,60 @@
-/* Подключаем шрифт для разнообразия (опционально) */
+/* Фон всех страниц */
 body {
-    font-family: 'Arial', sans-serif;
-    /* 2. Фон для всех страниц (светло-серый в RGB) */
-    background-color: rgb(240, 240, 245);
-    margin: 0;
-    padding: 0;
-    color: #333; /* Базовый цвет текста */
+    background-color: rgb(220, 230, 245);
+    font-family: Arial, sans-serif;
 }
 
-/* Общий контейнер для контента, чтобы не растягивался на весь экран */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: rgb(255, 255, 255); /* Белый фон для контента */
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-}
-
-/* 3. Стили для меню */
+/* Меню */
 .menu {
-    background-color: rgb(51, 51, 51);
-    padding: 15px 0;
-    margin-bottom: 30px;
-    border-radius: 5px;
-}
-
-.menu ul {
-    list-style: none; /* Убираем маркеры списка */
-    margin: 0;
+    list-style: none; /* убираем маркеры */
     padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
 }
 
-/* 3. Стили для ссылок меню */
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
 .menu a {
-    color: rgb(255, 255, 255); /* Цвет текста - белый */
-    font-size: 18px; /* Размер шрифта */
-    font-weight: bold; /* Начертание - жирное */
-    text-decoration: none; /* Убираем подчеркивание */
-    text-transform: uppercase; /* Заглавные буквы */
-    padding: 5px 10px;
-    transition: all 0.3s ease;
+    color: rgb(20, 60, 120);
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .menu a:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(51, 51, 51);
-    border-radius: 4px;
+    text-decoration: underline;
 }
 
-/* 4. Стили для заголовков на странице товара */
+/* Заголовки страницы товара */
 .product-title {
-    color: rgb(0, 0, 0); /* Черный текст */
+    color: black;
     font-size: 18px;
     font-weight: 400;
-    background-color: rgb(230, 230, 250); /* Светло-фиолетовый фон (RGB) */
-    padding: 10px 15px;
-    border-left: 5px solid rgb(100, 100, 200);
-    margin-top: 30px;
+    background-color: rgb(210,210,210);
+    padding: 5px;
 }
 
-/* 4. Стили для краткого описания */
+/* Краткое описание */
 .short-description {
-    color: rgb(255, 69, 0); /* Оранжево-красный (RGB) */
+    color: rgb(120,40,40);
     font-size: 14px;
-    font-style: italic; /* Курсив */
+    font-style: italic;
     line-height: 16px;
-    background-color: rgb(255, 240, 230); /* Очень светлый оранжевый фон */
-    padding: 15px;
-    border-radius: 5px;
 }
 
-/* 4. Стили для подробного описания */
+/* Подробное описание */
 .full-description {
-    color: rgb(70, 130, 180); /* Стальной синий (RGB) */
+    color: rgb(40,40,120);
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     text-align: left;
-    background-color: rgb(240, 248, 255); /* Светло-голубой фон */
-    padding: 15px;
-    border-radius: 5px;
 }
 
-/* 4. Стили для списка характеристик */
-.features-list {
-    /* Стиль, отличный от остального текста */
-    background-color: rgb(245, 245, 220); /* Бежевый фон */
-    padding: 15px 15px 15px 35px;
-    border: 1px dashed rgb(150, 150, 150);
-    border-radius: 8px;
-    list-style: none; /* Убираем стандартные маркеры */
-}
-
-/* Устанавливаем в качестве маркеров произвольные изображения */
-.features-list li {
-    /* Замените путь на актуальный, если изображение называется иначе */
-    background-image: url('img/marker.jpg');
-    background-size: 16px 16px; /* Подгоняем размер картинки */
-    background-repeat: no-repeat;
-    background-position: 0 4px; /* Позиция слева */
-    padding-left: 25px; /* Отступ, чтобы текст не налезал на картинку */
-    margin-bottom: 8px;
-    font-style: normal;
-    font-weight: 550; /* Немного жирнее обычного */
-    color: rgb(85, 107, 47); /* Темно-оливковый */
-}
-
-/* Стили для главной страницы */
-.main-info {
-    background-color: rgb(255, 255, 224);
-    padding: 20px;
-    border-radius: 8px;
-    line-height: 1.6;
-}
-
-.main-info h2 {
-    color: rgb(0, 100, 0);
-}
-
-.section {
-    min-height: 100vh;  /* Минимальная высота - весь экран */
-    height: auto;       /* Автовысота, если контента больше */
-    padding: 40px;
-    box-sizing: border-box; /* Чтобы padding не увеличивал общую высоту */
-    border-bottom: 2px solid rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Центрируем контент по вертикали */
+/* Характеристики */
+.features {
+    list-style-image: url("img/marker.png");
+    color: rgb(0,100,60);
+    font-size: 15px;
 }
