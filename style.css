@@ -101,3 +101,37 @@ display:none;
 .product:target{
 display:block;
 }
+
+/* Стили для изображений товаров */
+.product-image {
+    max-width: 100%;        /* Автоматически уменьшается под контейнер */
+    height: auto;           /* Сохраняет пропорции */
+    display: block;         /* Убирает лишние отступы */
+    margin: 15px 0;         /* Отступы сверху и снизу */
+    border-radius: 8px;     /* Скругленные углы (опционально) */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Легкая тень (опционально) */
+}
+
+/* Если нужно ограничить максимальный размер */
+.product-image {
+    max-width: 300px;       /* Фиксированная максимальная ширина */
+    width: 100%;            /* Но может быть меньше на узких экранах */
+    height: auto;
+}
+
+/* Альтернативный вариант с object-fit */
+.product-image {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;          /* Фиксированная высота */
+    object-fit: contain;    /* Вписывает без искажений */
+    background-color: #f5f5f5; /* Фон для областей, не занятых изображением */
+}
+
+/* Стили для контейнера товаров */
+.product {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
