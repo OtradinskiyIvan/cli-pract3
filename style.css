@@ -135,3 +135,15 @@ display:block;
     border: 1px solid #eee;
     border-radius: 10px;
 }
+
+.button {
+    padding: 24px 48px;
+    margin: 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000000;
+    background-color: aqua;
+}
