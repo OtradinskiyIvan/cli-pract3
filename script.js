@@ -4,10 +4,19 @@
 const CART_STORAGE_KEY = 'techstore_cart';
 
 // Глобальная переменная с массивом товаров и их ценами
+// Добавлены новые товары в разных категориях
 const products = [
+    // Электроника
     { id: 1, name: 'Смартфон Samsung', price: 29990, category: 'electronics' },
     { id: 2, name: 'Ноутбук Lenovo', price: 54990, category: 'electronics' },
-    { id: 3, name: 'Наушники Sony', price: 8990, category: 'electronics' }
+    { id: 3, name: 'Наушники Sony', price: 8990, category: 'electronics' },
+    
+    // Одежда
+    { id: 4, name: 'Толстовка с логотипом Linux', price: 3490, category: 'clothing' },
+    
+    // Книги
+    { id: 5, name: 'JavaScript для чайников', price: 1290, category: 'books' },
+    { id: 6, name: 'Базовый минимум по Computer Science', price: 1890, category: 'books' }
 ];
 
 // Функция для загрузки корзины из localStorage
@@ -70,7 +79,7 @@ const updateCartDisplay = () => {
     }
     
     // Отрисовываем товары в корзине
-    cart.forEach((item, index) => {
+    cart.forEach((item) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
@@ -185,13 +194,37 @@ const addToCart = (productId, productName, productPrice) => {
 const filterProducts = (category) => {
     const productCards = document.querySelectorAll('.product-card');
     
-    productCards.forEach((card, index) => {
-        if (category === 'all' || products[index].category === category) {
+    productCards.forEach((card) => {
+        // Получаем категорию товара из data-атрибута
+        const productCategory = card.dataset.category;
+        
+        if (category === 'all' || productCategory === category) {
             card.style.display = 'block';
+            // Добавляем небольшую анимацию
+            card.style.opacity = '0';
+            setTimeout(() => {
+                card.style.opacity = '1';
+            }, 50);
         } else {
             card.style.display = 'none';
         }
     });
+    
+    // Показываем сообщение о количестве отфильтрованных товаров
+    const visibleCount = document.querySelectorAll('.product-card[style="display: block"]').length;
+    const filterMessage = document.getElementById('filter-message');
+    if (filterMessage) {
+        if (category === 'all') {
+            filterMessage.textContent = `Показаны все товары (${visibleCount})`;
+        } else {
+            const categoryName = {
+                'electronics': 'Электронике',
+                'clothing': 'Одежде',
+                'books': 'Книгам'
+            }[category] || category;
+            filterMessage.textContent = `Найдено товаров в категории "${categoryName}": ${visibleCount}`;
+        }
+    }
 };
 
 // Инициализация при загрузке страницы
@@ -254,6 +287,7 @@ const createFilterOnCatalog = () => {
                 <option value="clothing">Одежда</option>
                 <option value="books">Книги</option>
             </select>
+            <p id="filter-message" class="filter-message">Показаны все товары (6)</p>
         `;
         
         // Вставляем после заголовка
@@ -266,37 +300,35 @@ const createFilterOnCatalog = () => {
     }
 };
 
-// Функция для отображения количества товаров в корзине (можно добавить в меню)
+// Функция для отображения количества товаров в корзине
 const updateCartCounter = () => {
-    const menuItems = document.querySelectorAll('.menu a');
-    menuItems.forEach(item => {
-        if (item.getAttribute('href') === 'cart.html') {
-            if (cart.length > 0) {
-                item.textContent = `Корзина (${cart.length})`;
-            } else {
-                item.textContent = 'Корзина';
-            }
+    const cartLink = document.querySelector('a[href="cart.html"]');
+    if (cartLink) {
+        if (cart.length > 0) {
+            cartLink.textContent = `Корзина (${cart.length})`;
+        } else {
+            cartLink.textContent = 'Корзина';
         }
-    });
+    }
 };
 
-// Вызываем при каждом изменении корзины
+// Переопределяем функции для обновления счетчика
 const originalAddToCart = addToCart;
-addToCart = (...args) => {
+window.addToCart = (...args) => {
     const result = originalAddToCart(...args);
     updateCartCounter();
     return result;
 };
 
 const originalRemoveFromCart = removeFromCart;
-removeFromCart = (...args) => {
+window.removeFromCart = (...args) => {
     const result = originalRemoveFromCart(...args);
     updateCartCounter();
     return result;
 };
 
 const originalClearCart = clearCart;
-clearCart = (...args) => {
+window.clearCart = (...args) => {
     const result = originalClearCart(...args);
     updateCartCounter();
     return result;

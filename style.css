@@ -267,3 +267,100 @@ display:block;
 .filter-section select:hover {
     border-color: #4CAF50;
 }
+
+/* Стили для категорий товаров */
+.product-category-badge {
+    display: inline-block;
+    background-color: #e0e0e0;
+    color: #333;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+/* Стили для фильтра */
+.filter-section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-section h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.filter-section select {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.filter-section select:hover {
+    border-color: #4CAF50;
+}
+
+.filter-message {
+    margin-top: 10px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Анимация для карточек товаров при фильтрации */
+.product-card {
+    transition: opacity 0.3s ease;
+}
+
+/* Цена товара */
+.product-price {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Кнопка добавления в корзину */
+.add-to-cart {
+    padding: 12px 24px;
+    margin: 20px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000000;
+    background-color: aqua;
+    font-weight: bold;
+}
+
+.add-to-cart:hover:not(:disabled) {
+    background-color: #00cccc;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.add-to-cart:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Для карточек в каталоге */
+.product-card {
+    border: 1px solid rgb(200,200,200);
+    padding: 15px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
