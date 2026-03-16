@@ -211,7 +211,8 @@ const filterProducts = (category) => {
     });
     
     // Показываем сообщение о количестве отфильтрованных товаров
-    const visibleCount = document.querySelectorAll('.product-card[style="display: block"]').length;
+    const visibleCards = Array.from(productCards).filter(card => card.style.display !== 'none');
+    const visibleCount = visibleCards.length;
     const filterMessage = document.getElementById('filter-message');
     if (filterMessage) {
         if (category === 'all') {

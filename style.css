@@ -43,7 +43,7 @@ body {
     text-decoration: none;
 }
 
-/* ГЛАВНАЯ ФИШКА: показ только выбранного товара */
+/* показ только выбранного товара */
 .product {
     display: none;
 }
@@ -253,3 +253,4 @@ body {
     color: #666;
     font-size: 14px;
 }
+
